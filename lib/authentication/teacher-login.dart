@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:acess_mobile/screens/instructor-dashboard.dart';
 import 'package:acess_mobile/screens/student-select.dart';
 import 'package:acess_mobile/splash-screen/splash-screen-2.dart';
 import 'package:flutter/material.dart';
@@ -30,6 +31,10 @@ class _TeacherLoginState extends State<TeacherLogin> {
         appBar: AppBar(
           title: Text("Instructor Login"),
           backgroundColor: Colors.black12,
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back_ios_rounded),
+            onPressed: () {},
+          ),
           actions: [
             DropdownButton(
               hint: Text("You\'re: "),
@@ -72,7 +77,7 @@ class _TeacherLoginState extends State<TeacherLogin> {
                   Container(
                     height: 300,
                     width: 400,
-                    child: Image.asset("assets/images/login.jpg"),
+                    child: Image.asset("assets/images/login.jpeg"),
                   ),
                   // SizedBox(height: 20),
                   Padding(
@@ -126,8 +131,9 @@ class _TeacherLoginState extends State<TeacherLogin> {
                                     )))),
                       ])),
                   SizedBox(height: 20),
-                  ElevatedButton(
-                    //controller: controller,
+                  RoundedLoadingButton(
+                    controller: controller,
+                    color: Colors.green,
                     onPressed: () async {
                       if (_formKey.currentState!.validate()) {
                         _formKey.currentState!.save();
@@ -137,9 +143,13 @@ class _TeacherLoginState extends State<TeacherLogin> {
                             () => Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Student())));
+                                    builder: (context) =>
+                                        InstructorDashboard())));
+                        controller.reset();
                       } else
-                        return;
+                        controller.reset();
+
+                      return;
                     },
                     child: Text('Log In'),
 

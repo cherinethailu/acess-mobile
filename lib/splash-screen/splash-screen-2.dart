@@ -15,6 +15,7 @@ class SplashScreen2 extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+        leading: Icon(Icons.navigate_before, size: 0),
         backgroundColor: Color(0xffc2e7e7),
       ),
       backgroundColor: Color(0xffc2e7e7),
@@ -58,15 +59,16 @@ class SplashScreen2 extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     fontSize: 20),
               ),
-              color: Color(0xffc2e7e7),
+              color: Colors.green[100],
               successColor: Colors.green,
               borderRadius: 20,
               elevation: 20,
               onPressed: () async {
                 Timer(
-                    Duration(seconds: 3),
+                    Duration(seconds: 5),
                     () => Navigator.push(context,
                         MaterialPageRoute(builder: (context) => Student())));
+                controller.reset();
               },
               controller: controller,
             )

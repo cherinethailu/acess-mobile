@@ -7,10 +7,60 @@ class InstructorDashboard extends StatefulWidget {
 }
 
 class _InstructorDashboardState extends State<InstructorDashboard> {
+  CalendarView _calendarView = CalendarView.day;
+  String viewTitle = "Class Schedule";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(child: SfCalendar()),
+      appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back_ios_rounded),
+          onPressed: () {},
+        ),
+        actions: [
+          RaisedButton.icon(
+            icon: Icon(Icons.logout),
+            onPressed: () {},
+            label: Text("Sign out"),
+            color: Colors.red,
+          ),
+        ],
+        backgroundColor: Color(0xffc2e7e7),
+      ),
+      body: Container(
+          child: SingleChildScrollView(
+        child: Column(children: [
+          SizedBox(height: 20),
+          Text(
+            "Class Schedule",
+            style: TextStyle(fontSize: 25, fontStyle: FontStyle.italic),
+          ),
+          SizedBox(height: 20),
+          Container(
+            width: 400,
+            height: 550,
+            child: Table(),
+            // SfCalendar(
+            //   firstDayOfWeek: 1,
+            //   allowedViews: [
+            //     CalendarView.day,
+            //     CalendarView.week,
+            //     CalendarView.month,
+            //     CalendarView.schedule
+            //   ],
+            //   showNavigationArrow: true,
+            //   showCurrentTimeIndicator: true,
+            //   cellBorderColor: Colors.blueGrey,
+            //   headerHeight: 40,
+            //   //showDatePickerButton: true,
+            //   showWeekNumber: true,
+            //   timeZone: 'EAT',
+            //   todayHighlightColor: Colors.brown,
+            //   view: CalendarView.day,
+            // ),
+          ),
+        ]),
+      )),
     );
   }
 }
