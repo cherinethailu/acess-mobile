@@ -44,25 +44,25 @@ class _InstructorDashboardState extends State<InstructorDashboard> {
           Container(
             width: 400,
             height: 550,
-            child: Table(),
-            // SfCalendar(
-            //   firstDayOfWeek: 1,
-            //   allowedViews: [
-            //     CalendarView.day,
-            //     CalendarView.week,
-            //     CalendarView.month,
-            //     CalendarView.schedule
-            //   ],
-            //   showNavigationArrow: true,
-            //   showCurrentTimeIndicator: true,
-            //   cellBorderColor: Colors.blueGrey,
-            //   headerHeight: 40,
-            //   //showDatePickerButton: true,
-            //   showWeekNumber: true,
-            //   timeZone: 'EAT',
-            //   todayHighlightColor: Colors.brown,
-            //   view: CalendarView.day,
-            // ),
+            child: 
+            SfCalendar(
+              firstDayOfWeek: 1,
+              allowedViews: [
+                CalendarView.day,
+                CalendarView.week,
+                CalendarView.month,
+                CalendarView.schedule
+              ],
+              showNavigationArrow: true,
+              showCurrentTimeIndicator: true,
+              cellBorderColor: Colors.blueGrey,
+              headerHeight: 40,
+              showDatePickerButton: true,
+              showWeekNumber: true,
+              timeZone: 'EAT',
+              todayHighlightColor: Color.fromARGB(0, 96, 121, 91),
+              view: CalendarView.schedule,
+            ),
           ),
         ]),
       )),
