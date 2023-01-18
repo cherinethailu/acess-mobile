@@ -15,13 +15,18 @@ class _InstructorDashboardState extends State<InstructorDashboard> {
       appBar: AppBar(
         leading: IconButton(
           icon: Icon(Icons.arrow_back_ios_rounded),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
         ),
         actions: [
-          RaisedButton.icon(
+          IconButton(
             icon: Icon(Icons.logout),
-            onPressed: () {},
-            label: Text("Sign out"),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            
+            //label: Text("Sign out"),
             color: Colors.red,
           ),
         ],
